@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | WEnion Bank of India</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='register.css') }}">
+</head>
+
+<body>
+
+    <main class="register-container">
+
+        <div class="register-header">
+            <div class="bank-icon">U</div>
+
+            <h1>Create Your Account</h1>
+
+            <p>Welcome to WEnion Bank of India</p>
+            <span>Enter your details to get started</span>
+        </div>
+
+        <form method="post" class="register-form">
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="useremail">Email Address</label>
+                <input
+                    type="email"
+                    id="useremail"
+                    name="useremail"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="userpassword">Password</label>
+                <input
+                    type="password"
+                    id="userpassword"
+                    name="userpassword"
+                    placeholder="Create a password"
+                    autocomplete="new-password"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="pinno">PIN Number</label>
+                <input
+                    type="password"
+                    id="pinno"
+                    name="pinno"
+                    placeholder="Enter your PIN"
+                    inputmode="numeric"
+                    pattern="[0-9]{4,6}"
+                    minlength="4"
+                    maxlength="6"
+                    autocomplete="off"
+                    title="Enter a PIN containing 4 to 6 digits"
+                    required
+                >
+                <small>Enter a 4–6 digit numeric PIN.</small>
+            </div>
+
+            <button type="submit" class="register-button">
+                Create Account <span>→</span>
+            </button>
+
+        </form>
+
+        <div class="login-link">
+            Already have an account?
+            <a href="{{ url_for('login') }}">Login here</a>
+        </div>
+
+        <footer class="register-footer">
+            © 2026 WEnion Bank of India
+        </footer>
+
+    </main>
+
+</body>
+</html>

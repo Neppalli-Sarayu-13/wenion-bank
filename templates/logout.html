@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='logout.css') }}">
+</head>
+
+<body>
+
+    <div class="logout-box">
+        <h1>Logged Out</h1>
+        <p>You have successfully logged out of your account.</p>
+        <a href="{{url_for('login')}}" class="btn">Go to Login Page</a>
+    </div>
+
+</body>
+</html>

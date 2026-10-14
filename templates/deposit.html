@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Deposit Money | WEnion Bank</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='deposit.css') }}">
+</head>
+
+<body>
+
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+    <div class="background-shape shape-three"></div>
+
+    <main class="deposit-container">
+
+        <!-- Header -->
+        <header class="deposit-header">
+
+            <div class="bank-icon">
+                <span>₹</span>
+            </div>
+
+            <p class="eyebrow">WENION BANK OF INDIA</p>
+
+            <h1>Deposit Money</h1>
+
+            <p class="subtitle">
+                Add funds to your account with ease.
+            </p>
+
+        </header>
+
+        <!-- Deposit Form -->
+        <form method="post" class="deposit-form">
+
+            <label for="amount">Enter Deposit Amount</label>
+
+            <div class="amount-wrapper">
+                <span class="currency-symbol">₹</span>
+
+                <input
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    placeholder="0.00"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal"
+                    required
+                >
+            </div>
+
+            <p class="input-hint">
+                Enter the amount you wish to deposit.
+            </p>
+
+            <button type="submit" class="deposit-button">
+                <span>Submit Deposit</span>
+                <span class="button-arrow">→</span>
+            </button>
+
+        </form>
+
+        <!-- Information -->
+        <div class="security-note">
+            <span class="security-icon">✓</span>
+            <p>Enter an amount and review it before submitting.</p>
+        </div>
+
+        <footer class="deposit-footer">
+            © 2026 WEnion Bank of India
+        </footer>
+
+    </main>
+
+</body>
+</html>

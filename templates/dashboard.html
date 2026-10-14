@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard |  WEnion Bank of India</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+
+<body>
+
+    <!-- Animated background -->
+    <div class="background-effects">
+        <span class="orb orb-one"></span>
+        <span class="orb orb-two"></span>
+        <span class="orb orb-three"></span>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <a href="{{ url_for('dashboard') }}" class="brand">
+            <div class="brand-logo">U</div>
+            <div class="brand-text">
+                <h2> WENION BANK</h2>
+                <span>OF INDIA</span>
+            </div>
+        </a>
+
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="navigation">
+            <a href="{{ url_for('deposit') }}">Deposit</a>
+            <a href="{{ url_for('withdraw') }}">Withdraw</a>
+            <a href="{{ url_for('balance') }}">Balance</a>
+            <a href="{{ url_for('userstatements') }}">Statements</a>
+
+            <a href="#account" class="account-link">My Account</a>
+
+            <a href="{{ url_for('logout') }}" class="logout-link">
+                Logout <span>↗</span>
+            </a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- Welcome hero -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="welcome-badge">
+                    <span class="online-dot"></span>
+                    YOUR BANKING DASHBOARD
+                </div>
+
+                <p class="greeting">
+                    Hello, {{ request.cookies.get('userid', 'Customer') }}!
+                </p>
+
+                <h1>
+                    Welcome to
+                    <span>WEnion Bank</span>
+                    <span class="title-last">of India.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Banking made simple, secure, and convenient.
+                    Manage your money and access your banking services
+                    all in one place.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="{{ url_for('deposit') }}" class="primary-button">
+                        <span>＋</span> Deposit Money
+                    </a>
+
+                    <a href="{{ url_for('balance') }}" class="secondary-button">
+                        Check Balance <span>→</span>
+                    </a>
+                </div>
+
+                <div class="trust-row">
+                    <div class="trust-icon">✓</div>
+                    <p>Convenient access to your banking services</p>
+                </div>
+
+            </div>
+
+            <!-- Banking illustration -->
+            <div class="hero-visual">
+
+                <div class="visual-glow"></div>
+
+                <div class="image-frame">
+                    <img
+                        src="https://img.freepik.com/free-vector/bank-composition-with-outdoor-landscape-classic-building-with-columns-car-pedestrian-silhouette-cityscape-vector-illustration_1284-82674.jpg"
+                        alt="Illustration of a traditional bank building">
+                </div>
+
+                <div class="floating-card card-top">
+                    <div class="floating-icon">₹</div>
+                    <div>
+                        <strong>Banking made easy</strong>
+                        <p>Your money, your control</p>
+                    </div>
+                </div>
+
+                <div class="floating-card card-bottom">
+                    <div class="secure-icon">✓</div>
+                    <div>
+                        <strong>Secure Access</strong>
+                        <p>Manage your account</p>
+                    </div>
+                </div>
+
+                <div class="decorative-circle circle-one"></div>
+                <div class="decorative-circle circle-two"></div>
+
+            </div>
+
+        </section>
+
+        <!-- Banking services -->
+        <section class="services" id="account">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">BANKING SERVICES</span>
+                    <h2>What would you like to do?</h2>
+                </div>
+
+                <p>Choose a service to get started.</p>
+            </div>
+
+            <div class="service-grid">
+
+                <a href="{{ url_for('deposit') }}" class="service-card deposit-card">
+                    <div class="service-icon">＋</div>
+                    <h3>Deposit Money</h3>
+                    <p>Add money to your account through the deposit service.</p>
+                    <span class="service-arrow">Explore service →</span>
+                </a>
+
+                <a href="{{ url_for('withdraw') }}" class="service-card withdraw-card">
+                    <div class="service-icon">↗</div>
+                    <h3>Withdraw Money</h3>
+                    <p>Access the withdrawal service whenever you need it.</p>
+                    <span class="service-arrow">Explore service →</span>
+                </a>
+
+                <a href="{{ url_for('balance') }}" class="service-card balance-card">
+                    <div class="service-icon">₹</div>
+                    <h3>Check Balance</h3>
+                    <p>View the current balance associated with your account.</p>
+                    <span class="service-arrow">Explore service →</span>
+                </a>
+
+                <a href="{{ url_for('userstatements') }}" class="service-card statement-card">
+                    <div class="service-icon">▤</div>
+                    <h3>Account Statement</h3>
+                    <p>Review your available account transaction history.</p>
+                    <span class="service-arrow">Explore service →</span>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Security banner -->
+        <section class="security-banner">
+            <div class="security-badge">✓</div>
+
+            <div>
+                <h3>Your account. Your responsibility.</h3>
+                <p>Never share your password, PIN, or other confidential banking details.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <span class="footer-logo">U</span>
+            <span>WEnion Bank of India</span>
+        </div>
+
+        <p>© 2026 WEnion Bank Dashboard. All rights reserved.</p>
+        <a href="{{ url_for('logout') }}">Sign out ↗</a>
+    </footer>
+
+</body>
+</html>

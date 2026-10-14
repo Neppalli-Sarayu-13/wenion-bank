@@ -1,0 +1,67 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full page center */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    /* nice gradient background */
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+}
+
+
+/* Card box */
+.logout-box {
+    background: white;
+    padding: 50px 70px;
+    border-radius: 12px;
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+
+/* Heading */
+.logout-box h1 {
+    font-size: 36px;
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+
+/* Paragraph */
+.logout-box p {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+
+    background-color: #27ae60;
+    color: white;
+    text-decoration: none;
+
+    border-radius: 6px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+/* Hover */
+.btn:hover {
+    background-color: #1e8449;
+}

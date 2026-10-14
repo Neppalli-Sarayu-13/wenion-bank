@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Balance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='balance.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>User Name: {{username}}</h2>
+    {# {% if age>18 %}
+    <p>Eligible</p>
+    {% else %}
+    <p>Not Eligible</p>
+    {% endif %} #}
+
+
+    {% for i in userdata %}
+    <p>Useremail: {{i}}</p>
+    <p>Amount: {{userdata[i]['Amount']}}</p>
+    {% endfor %}
+
+
+
+    <a href="/">Go Back</a>
+</div>
+
+</body>
+</html>

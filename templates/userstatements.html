@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wenion Bank | Account Statement</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='userstatements.css') }}">
+</head>
+
+<body>
+    <header class="topbar">
+        <a href="{{ url_for('dashboard') }}" class="brand">
+            <div class="brand-logo">W</div>
+            <div class="brand-text">
+                <h2>WENION BANK</h2>
+                <span>YOUR TRUST. OUR PRIORITY.</span>
+            </div>
+        </a>
+
+        <a href="{{ url_for('dashboard') }}" class="back-btn">
+            ← Dashboard
+        </a>
+    </header>
+
+    <main class="page-container">
+
+        <section class="page-heading">
+            <div class="heading-icon">▤</div>
+            <div>
+                <p class="eyebrow">ACCOUNT OVERVIEW</p>
+                <h1>Account Statement</h1>
+                <p class="subtitle">
+                    Review your deposit and withdrawal transactions.
+                </p>
+            </div>
+        </section>
+
+        <section class="summary-card">
+            <div class="summary-icon">₹</div>
+            <div>
+                <p>Current Available Balance</p>
+                <h2>₹ {{ balance_amount }}</h2>
+                <span class="balance-note">
+                    Your account balance
+                </span>
+            </div>
+        </section>
+
+        <!-- Deposit Statement -->
+        <section class="statement-section deposit-section">
+            <div class="section-heading">
+                <div class="section-icon deposit-icon">↓</div>
+                <div>
+                    <h2>Deposit Statement</h2>
+                    <p>Your money added to the account</p>
+                </div>
+                <span class="transaction-count">
+                    {{ user_deposit_statements|length }} transactions
+                </span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Deposit Time</th>
+                            <th>Deposit Amount</th>
+                            <th>Current Balance</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for i in user_deposit_statements %}
+                        <tr>
+                            <td>{{ i[1] }}</td>
+                            <td class="amount deposit-amount">
+                                + ₹ {{ i[0] }}
+                            </td>
+                            <td>₹ {{ balance_amount }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3" class="empty-state">
+                                <span class="empty-icon">▤</span>
+                                <p>No deposit transactions found.</p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Withdrawal Statement -->
+        <section class="statement-section withdraw-section">
+            <div class="section-heading">
+                <div class="section-icon withdraw-icon">↑</div>
+                <div>
+                    <h2>Withdraw Statement</h2>
+                    <p>Money withdrawn from the account</p>
+                </div>
+                <span class="transaction-count">
+                    {{ user_withdraw_statements|length }} transactions
+                </span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Withdraw Amount</th>
+                            <th>Withdraw Time</th>
+                            <th>Current Balance</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for i in user_withdraw_statements %}
+                        <tr>
+                            <td class="amount withdraw-amount">
+                                − ₹ {{ i[1] }}
+                            </td>
+                            <td>{{ i[0] }}</td>
+                            <td>₹ {{ balance_amount }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3" class="empty-state">
+                                <span class="empty-icon">▤</span>
+                                <p>No withdrawal transactions found.</p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <p>© {{ 2026 }} Wenion Bank. All rights reserved.</p>
+            <p>Banking made simple. Banking made secure.</p>
+        </footer>
+
+    </main>
+</body>
+</html>

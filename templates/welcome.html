@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WEnion Bank of India | Welcome</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='welcome.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="#" class="brand">
+            <!-- <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2OYyn7CMzfYoIHYYW2KSQqNBrEpwxhK8ARQ&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2OYyn7CMzfYoIHYYW2KSQqNBrEpwxhK8ARQ&s"
+                alt="Union Bank Logo"
+                class="bank-logo"
+            > -->
+
+            <div class="brand-text">
+                <h2>WEnion Bank</h2>
+                <span>of India</span>
+            </div>
+        </a>
+
+        <div class="nav-buttons">
+            <a href="{{ url_for('login') }}" class="btn btn-outline">
+                Login
+            </a>
+
+            <a href="{{ url_for('register') }}" class="btn btn-primary">
+                Open an Account <span>→</span>
+            </a>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <div class="welcome-badge">
+                <span class="status-dot"></span>
+                Welcome to a smarter banking experience
+            </div>
+
+            <h1>
+                Your Dreams.<br>
+                <span>Your Future.</span><br>
+                Our Banking.
+            </h1>
+
+            <p class="hero-description">
+                Experience banking designed around you.
+                Manage your financial journey with confidence,
+                convenience, and a trusted banking experience.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="{{ url_for('register') }}" class="btn btn-primary btn-large">
+                    Get Started <span>→</span>
+                </a>
+
+                <a href="{{ url_for('login') }}" class="btn btn-light btn-large">
+                    Sign In
+                </a>
+            </div>
+
+            <div class="trust-note">
+                <span class="trust-icon">✓</span>
+                Banking made simple, secure, and convenient
+            </div>
+
+        </div>
+
+
+        <!-- Hero Image -->
+        <div class="hero-visual">
+
+            <div class="circle circle-one"></div>
+            <div class="circle circle-two"></div>
+
+            <div class="image-card">
+                <img
+                    src="https://img.freepik.com/free-vector/bank-composition-with-outdoor-landscape-classic-building-with-columns-car-pedestrian-silhouette-cityscape-vector-illustration_1284-82674.jpg"
+                    alt="Bank building illustration"
+                >
+
+                <div class="floating-card card-top">
+                    <span class="floating-icon">✦</span>
+                    <div>
+                        <strong>Banking for You</strong>
+                        <small>Your goals, our priority</small>
+                    </div>
+                </div>
+
+                <div class="floating-card card-bottom">
+                    <span class="check-circle">✓</span>
+                    <div>
+                        <strong>Your Financial Journey</strong>
+                        <small>Start with confidence</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Features -->
+    <section class="features">
+
+        <div class="feature">
+            <div class="feature-icon">⌁</div>
+            <div>
+                <h3>Easy Banking</h3>
+                <p>A simple and convenient experience.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">◇</div>
+            <div>
+                <h3>Customer First</h3>
+                <p>Designed around your banking needs.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">↗</div>
+            <div>
+                <h3>Future Ready</h3>
+                <p>Take the next step towards your goals.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 WEnion Bank of India. All rights reserved.</p>
+        <p>Welcome to a better banking experience.</p>
+    </footer>
+
+</body>
+</html>
